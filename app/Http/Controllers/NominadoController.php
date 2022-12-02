@@ -74,105 +74,20 @@ class NominadoController extends Controller
             $sortOrder = 'desc';
         }
 
-        $militantes = Militante::orderBy($sortBy, $sortOrder)
-                                ->with('genero')
-                                ->with('tipoinscripcion')
-                                ->with('niveleducativo')
-                                ->with('grupoetnico')
-                                ->with('departamento')
-                                ->with('ciudad')
-                                ->with('estados')
-                                ->with('remplazo')
-                                ->with('corporacion')
+        $nominados = Nominados::orderBy($sortBy, $sortOrder)
+                                ->with('nominaciones')
                                 ->with('tipodocumento')
-                                ->with('archivos.tipoarchivo');
+                                ->with('genero')
+                                ->with('departamento')
+                                ->with('ciudad');
 
-        if ($buscar <> '') {
-            $militantes = $militantes
-                        ->where('nombre', 'like', '%'. $buscar . '%')
-                        ->orWhere('apellido', 'like', '%'. $buscar . '%')
-                        ->orWhere('email', 'like', '%'. $buscar . '%')
-                        ->orWhere('documento', 'like', '%'. $buscar . '%');
-        }
-
-        if (!is_null($filtros)) {
-            if(!is_null($filtros->fechainicio) && $filtros->fechainicio <> '' && $filtros->fechainicio <> null) {
-                $militantes = $militantes->where('fechaingreso', '>=', $filtros->fechainicio);
-            }
-            if(!is_null($filtros->fechafin) && $filtros->fechafin <> '' && $filtros->fechafin <> null) {
-                $militantes = $militantes->where('fechaingreso', '<=', $filtros->fechafin);
-            }
-            if (!is_null($filtros->documento) && $filtros->documento <> '') {
-                $militantes = $militantes->where('documento', 'like', '%' . $filtros->documento . '%');
-            }
-            if (!is_null($filtros->nombre) && $filtros->nombre <> '') {
-                $militantes = $militantes->where('nombre', 'like', '%' . $filtros->nombre . '%')
-                                         ->orWhere('apellido', 'like', '%' . $filtros->nombre . '%');
-            }
-            if (!is_null($filtros->email) && $filtros->email <> '') {
-                $militantes = $militantes->where('email', 'like', '%' . $filtros->email . '%');
-            }
-            if (!is_null($filtros->movil) && $filtros->movil <> '') {
-                $militantes = $militantes->where('movil', 'like', '%' . $filtros->movil . '%');
-            }
-            if(!is_null($filtros->idciudad) && $filtros->idciudad <> '') {
-                $ciudades = $filtros->idciudad;
-                $militantes = $militantes->whereHas('ciudad', function($query) use ($ciudades) {
-                                           $query->where('nombre', 'like', '%'.$ciudades.'%');
-                });
-            }
-            if (!is_null($filtros->idinscripcion) && $filtros->idinscripcion <> '-' && $filtros->idinscripcion <> 0) {
-                $militantes = $militantes->where('idinscripcion', $filtros->idinscripcion);
-            }
-            if (!is_null($filtros->idgenero) && $filtros->idgenero <> '-' && $filtros->idgenero <> 0) {
-                $militantes = $militantes->where('idgenero', $filtros->idgenero);
-            }
-            if (!is_null($filtros->idgrupoetnico) && $filtros->idgrupoetnico <> '-' && $filtros->idgrupoetnico <> 0) {
-                $militantes = $militantes->where('idgrupoetnico', $filtros->idgrupoetnico);
-            }
-            if (!is_null($filtros->idcorporacion) && $filtros->idcorporacion <> '-' && $filtros->idcorporacion <> 0 && $filtros->idcorporacion <> null) {
-                $militantes = $militantes->where('idcorporacion', $filtros->idcorporacion);
-            }
-            if (!is_null($filtros->lider) && $filtros->lider <> '' && $filtros->lider <> '-') {
-                $militantes = $militantes->where('lider', $filtros->lider);
-            }
-            if (!is_null($filtros->avalado) && $filtros->avalado <> '' && $filtros->avalado <> '-') {
-                $militantes = $militantes->where('avalado', $filtros->avalado);
-            }
-            if (!is_null($filtros->electo) && $filtros->electo <> '' && $filtros->electo <> '-') {
-                $militantes = $militantes->where('electo', $filtros->electo);
-            }
-            if (!is_null($filtros->estado) && $filtros->estado <> '' && $filtros->estado <> '-') {
-                $militantes = $militantes->where('estado', $filtros->estado);
-            }
-            if (!is_null($filtros->aportes) && $filtros->aportes <> '' && $filtros->aportes <> '-') {
-                if ($filtros->aportes == 1) {
-                    $militantes = $militantes->where('aportes', '>', $filtros->aportes);
-                }
-            }
-            if (isset($filtros->examen)) {
-                if (!is_null($filtros->examen) && $filtros->examen <> '' && $filtros->examen <> '-') {
-                    $militantes = $militantes->join('test_examenuser', 'militantes.id', '=', 'test_examenuser.idmilitante')
-                        ->where('test_examenuser.estado', $filtros->examen)
-                        ->select('militantes.*');
-                }
-            }
-            if (isset($filtros->estadocc)) {
-                if (!is_null($filtros->estadocc) && $filtros->estadocc <> '' && $filtros->estadocc <> '-') {
-                    $militantes = $militantes->join('cc_cuentasclaras', 'militantes.id', '=', 'cc_cuentasclaras.idmilitante')
-                        ->where('cc_cuentasclaras.estado', $filtros->estadocc)
-                        ->select('militantes.*');
-                }
-            }
-        }
-
-        $militantes = $militantes->paginate(self::canPorPagina);
+        $nominados = $nominados->paginate(self::canPorPagina);
 
         if ($request->has('ispage') && $request->ispage){
-            return ['militantes' => $militantes];
+            return ['nominados' => $nominados];
         } else {
 
-            return Inertia::render('Militantes/Index', ['militantes' => $militantes, '_token' => csrf_token()]);
+            return Inertia::render('Juegosfarallones/Nominados', ['nominados' => $nominados, '_token' => csrf_token()]);
         }
     }
 

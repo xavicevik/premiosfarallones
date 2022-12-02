@@ -61,7 +61,7 @@ export default {
                 <div class="flex-grow">
                     <ul class="flex flex-col py-2 space-y-1">
                         <span>
-                            <img :src="'../storage/img/' + $page.props.user.idempresa + '_logo_fondo.png'" class="mx-auto w-1/2 sm:w-full" alt=""/>
+                            <img :src="'../storage/hero.png'" class="mx-auto w-1/2 sm:w-full" alt=""/>
                         </span>
                         <li class="px-5 md:block">
                             <div class="flex flex-row items-center h-8">
@@ -272,13 +272,8 @@ export default {
                 </button>
                 <!-- Header -->
                 <div class="flex items-center w-1/3 justify-start md:justify-center pl-3 h-10 border-none">
-                    <img v-if="$page.props.user.profile_photo_path" class="w-5 md:w-8 mr-2 rounded-md overflow-hidden" :src="'../storage/' + $page.props.user.profile_photo_path" />
-                    <img v-else class="w-5 h-5 md:w-7 md:h-7 mr-2 rounded-md overflow-hidden" src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />
+                    <img class="w-5 h-5 md:w-7 md:h-7 mr-2 rounded-md overflow-hidden" src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />
 
-                    <span class="hidden md:block">
-                        <span class="font-bold"> {{ $page.props.auth.user.roles[0].name }}</span> -
-                        {{ $page.props.user.full_name }}
-                    </span>
                 </div>
                 <div class="flex w-1/3 justify-end pr-2 items-right h-10 header-right">
                     <ul class="flex">

@@ -61,7 +61,7 @@
                 <p class="leading-normal text-2xl mb-8">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                <button @click="openModal('registrar')" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Registrarse
                 </button>
             </div>
@@ -500,7 +500,6 @@
                 :gap="3"
                 :dragging-distance="200"
                 :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
-                @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
                 >
                 <vueper-slide
                     v-for="(slide, i) in slides"
@@ -628,7 +627,7 @@
                             <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500">
                                 <li class="mr-2">
                                     <div class="flex">
-                                        <h2 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Formulario de registro</h2>
+                                        <h2 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Formulario de registro de nominaciones</h2>
                                     </div>
                                 </li>
                             </ul>
@@ -765,19 +764,19 @@
 
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                                     <div class="text-center">
-                                        <button @click="selctPeriodo('2021')" type="button" class="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 focus:bg-amber-400 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
+                                        <button @click="selctPeriodo('2021')" :class="{'border-blue-500 border-4 ring-4 outline-none ring-blue-300 bg-blue-800': nominaciones.anio == '2021'}" type="button" class="text-white bg-blue-400 hover:bg-blue-800 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
                                             Año 2021
                                             <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                         </button>
                                     </div>
                                     <div class="text-center">
-                                        <button @click="selctPeriodo('2022')" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
+                                        <button @click="selctPeriodo('2022')" :class="{'border-blue-500 border-4 ring-4 outline-none ring-blue-300 bg-blue-800': nominaciones.anio == '2022'}" type="button" class="text-white bg-blue-400 hover:bg-blue-800 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
                                             Año 2022
                                             <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                                <div v-show="estado == 'selctPeriodo'" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                                     <div class="flex">
                                         <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Seleccione la categoría</h4>
                                     </div>
@@ -811,26 +810,27 @@
                                         <div class="my-auto">
                                             <form name="cc" id="cc" @submit.prevent="submit" enctype="multipart/form-data">
                                                 <div>
-                                                    <input @change="onFileChange" type="file" name="file" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-black-500 sm:text-sm">
+                                                    <input @change="onFileChange" type="file" name="file" class="border-2 h-9 text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-black-500 sm:text-sm">
+                                                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">El archivo debe estar en formato PDF.</p>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                                <div v-show="nominaciones.nombre && nominaciones.file" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                                     <div class="flex">
                                         <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Ingrese la cantidad de medallas</h4>
                                     </div>
                                 </div>
-                                <div v-show="estado == 'selctPeriodo'" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
+                                <div v-show="nominaciones.nombre && nominaciones.file" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
                                     <div>
                                         <label :class="{'font-bold' : estado == 4}" class="block mt-2 text-sm text-bold font-medium text-gray-700">Oro</label>
                                         <div class="mt-1 flex">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-yellow-500 w-10 h-10">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
-                                                </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-yellow-500 w-10 h-10">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                            </svg>
                                             <div class="text-center mx-auto">
-                                                <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.oro" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="0" max="100" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.oro" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             </div>
                                         </div>
                                     </div>
@@ -841,7 +841,7 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
                                             </svg>
                                             <div class="text-center mx-auto">
-                                                <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.plata" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="0" max="100" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.plata" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             </div>
                                         </div>
                                     </div>
@@ -852,7 +852,7 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
                                             </svg>
                                             <div class="text-center mx-auto">
-                                                <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.bronce" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="0" max="100" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.bronce" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             </div>
                                         </div>
                                     </div>
@@ -860,29 +860,34 @@
                                 <div v-if="form.nominaciones" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-1 sm:gap-x-4">
                                     <!-- Tabla de contenido -->
                                     <section>
+                                        <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                                            <div class="flex">
+                                                <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Listado de nominaciones</h4>
+                                            </div>
+                                        </div>
                                         <div class="lg:px-4 md:px-2 sm:px-0 py-2 overflow-y-auto h-50">
                                             <table class="border-black text-black table-fixed w-full">
                                                 <thead>
                                                 <tr class="bg-gray-100">
-                                                    <th class="px-4 py-2 w-1/12 text-sm font-bold rounded-b">
+                                                    <th class="text-center px-4 py-2 w-1/12 text-sm font-bold rounded-b">
                                                         Año
                                                     </th>
-                                                    <th class="px-4 py-2 w-2/12 text-sm font-bold rounded-b">
+                                                    <th class="text-center px-4 py-2 w-2/12 text-sm font-bold rounded-b">
                                                         Modalidad
                                                     </th>
-                                                    <th class="px-4 py-2 w-3/12 text-sm font-bold rounded-b">
+                                                    <th class="text-center px-4 py-2 w-3/12 text-sm font-bold rounded-b">
                                                         Categoría
                                                     </th>
-                                                    <th class="px-4 py-2 text-sm font-bold w-3/12 rounded-b">
+                                                    <th class="text-center px-4 py-2 text-sm font-bold w-3/12 rounded-b">
                                                         Nombre
                                                     </th>
-                                                    <th class="px-4 py-2 text-sm font-bold w-1/12 rounded-b">
+                                                    <th class="text-center px-4 py-2 text-sm font-bold w-1/12 rounded-b">
                                                         Oro
                                                     </th>
-                                                    <th class="px-4 py-2 text-sm font-bold w-1/12 rounded-b">
+                                                    <th class="text-center px-4 py-2 text-sm font-bold w-1/12 rounded-b">
                                                         Plata
                                                     </th>
-                                                    <th class="px-4 py-2 text-sm font-bold w-1/12 rounded-b">
+                                                    <th class="text-center px-4 py-2 text-sm font-bold w-1/12 rounded-b">
                                                         Bronce
                                                     </th>
                                                 </tr>
@@ -1048,13 +1053,64 @@
                             <!-- fin menu 1 -->
                         </tab-content>
 
-
                     </form-wizard>
                 </div>
             </div>
         </div>
     </section>
     <!-- Fin Ventana modal Detalles -->
+
+
+    <!-- Main modal -->
+    <section> <!-- Ventana modal -->
+        <div class="fixed z-10 inset-0 overflow-y-auto ease-out duration-400" v-if="isOpendatos">
+            <div class="items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+
+                <div class="fixed inset-0 transition-opacity">
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+
+                <!-- This element is to trick the browser into centering the modal contents. -->
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+                <div class="inline-block lg:w-4/12 align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                    <button type="button" @click="isOpendatos = !isOpendatos" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="">
+                        <h2 class="text-xl font-bold text-gray-900 px-4 py-4">Política de protección de datos</h2>
+                    </div>
+                    <div class="bg-white px-4 pt-2 pb-4 ">
+                        <div class="">
+                            <div class="mt-1">
+                                <textarea rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">Enviar mensajes con contenidos institucionales, notificaciones, invitación a eventos, y a la participación de espacios de conexión virtual o presencial, alianzas, convenios e iniciativas relacionadas con la toma de decisiones para el acceso e ingreso a programas de educación superior e información relativa al portafolio de servicios de la Entidad y a los procesos asociados a cada uno de los servicios, a través de correo electrónico, mensajes de texto, redes social o cualquier otro canal oficial de comunicación del ICETEX.
+
+Atención y respuesta de Peticiones, quejas, reclamos, sugerencias y denuncias (PQRSD).
+
+Adelantar actividades de prevención relacionadas con el estado de salud y la Emergencia sanitaria, acorde con los lineamientos del Gobierno Nacional en la materia.
+
+Colaborar en los programas de Comunidad ICETEX, que no tienen un vínculo activo con ICETEX.
+
+Desarrollar campañas, actividades de divulgación, capacitaciones y programas de capacitación o formación en habilidades duras, blandas, en acciones de Bienestar o Salud Mental, con el fin de potenciar su perfil profesional y personal.
+
+Realizar transferencia de datos personales a cualquier otra entidad con quienes ICETEX suscriba alianzas, convenios y/o contratos que tengan por objeto de fortalecer la gestión administrativa y ampliar la oferta de productos y servicios.
+
+Grabación de imágenes, voz o cualquier otro registro que sirva de soporte, evidencia, almacenamiento, publicación y distribución de memorias de los eventos, audiencias realizadas y atención de PQRSD.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                          <button @click="registrarCheckout()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5" >
+                            Aceptar
+                          </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Ventana modal -->
+
     <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   -->
@@ -1162,6 +1218,8 @@ export default {
 
             ],
             currentstate: '',
+            protecciondatos: false,
+            isOpendatos: false,
             progresoimport: '',
             current_row: 0,
             total_rows: 0,
@@ -1270,34 +1328,6 @@ export default {
             this.archivoform.file = e.target.files[0];
             this.subirArchivocc(this.archivoform);
         },
-        cambiarPass: function(){
-            this.isOpencambiopass = true;
-        } ,
-        updatePass: function(data) {
-            this.$inertia.post('/changepasssu', data, {
-                onSuccess: (page) => {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Se ha cambiado la contraseña',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    this.formpasswd.id = 0;
-                    this.formpasswd.password = '';
-                    this.formpasswd.password_confirmation = '';
-                    this.isOpencambiopass = false;
-                    this.getmilitantes('','nombre');
-                    this.editMode = false;
-                    this.closeModal();
-                },
-            });
-        },
-        openModalImport: function() {
-            this.tituloModal = 'Importar archivo Excel';
-            this.isImport = true;
-        },
-
         selctPeriodo: function (periodo) {
             this.form.periodo = periodo;
             this.estado = 'selctPeriodo';
@@ -1334,20 +1364,7 @@ export default {
             this.newMode  = false;
             this.errors = [];
         },
-        closeModalRemplazo: function(){
-            this.isOpenRemplazo = false;
-            this.errors = [];
-        },
-        closeModalCambioestado: function() {
-            //this.closeModal();
-            this.isOpenCambioestado = false;
-            this.getmilitantes('','updated_at');
-            this.formestado = [];
-        },
-        closeModalPass: function () {
-            this.isOpencambiopass = false
-            this.errors.updatePassword = null;
-        },
+
         subirArchivo: function (data) {
             if (data.idtipoarchivo > 0 && data.file) {
                 this.$inertia.post('/archivo/upload', data, {
@@ -1398,27 +1415,6 @@ export default {
                 }
             }).then((res) => {
                 this.arrayArchivos = res.data.archivos;
-            })
-        },
-        getExamen: function (data) {
-            var url= '/examens/getExamen';
-            axios.get(url, {
-                params: {
-                    idmilitante: data
-                }
-            }).then((res) => {
-                this.examenuser = res.data.examenuser;
-                this.examen = res.data.examen;
-            })
-        },
-        getHistorial: function (data) {
-            var url= '/militantes/getHistorial';
-            axios.get(url, {
-                params: {
-                    idmilitante: data
-                }
-            }).then((res) => {
-                this.arrayHistorial = res.data.historial;
             })
         },
         verHistorial: function (data) {
@@ -1822,6 +1818,22 @@ export default {
                 return false;
             }
 
+            this.isOpendatos = true;
+        },
+        registrarCheckout: function() {
+            /*
+            if (!this.protecciondatos) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Debe aceptar la política de tratamiento de datos personales para continuar',
+                    showConfirmButton: true,
+                })
+                return false;
+            }
+
+             */
+
+            this.isOpendatos = false;
             var formData = new FormData();
             formData.append('nombre', this.nominaciones.nombre);
             formData.append('idnominado', this.form.id);
@@ -1834,23 +1846,23 @@ export default {
             formData.append('bronce', this.nominaciones.bronce);
             formData.append('file', this.nominaciones.file);
 
-/*
-            this.$inertia.post('/nominaciones', formData, {
-                onBefore: (visit) => { console.log('onBefore');},
-                onStart: (visit) => {console.log('onStart');},
-                onProgress: (progress) => {console.log('onProgress');},
-                onSuccess: (page) => {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Se realizó la creación de la nominación',
-                        showConfirmButton: true,
-                    })
-                },
-                onError: (errors) => {console.log(errors);},
-                onCancel: () => {console.log('onCancel');},
-                onFinish: visit => {console.log('onFinish');},
-            });
-          */
+            /*
+                        this.$inertia.post('/nominaciones', formData, {
+                            onBefore: (visit) => { console.log('onBefore');},
+                            onStart: (visit) => {console.log('onStart');},
+                            onProgress: (progress) => {console.log('onProgress');},
+                            onSuccess: (page) => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Se realizó la creación de la nominación',
+                                    showConfirmButton: true,
+                                })
+                            },
+                            onError: (errors) => {console.log(errors);},
+                            onCancel: () => {console.log('onCancel');},
+                            onFinish: visit => {console.log('onFinish');},
+                        });
+                      */
             axios.post('/nominaciones', formData)
                 .then((res) => {
                     Swal.fire({
@@ -1872,6 +1884,7 @@ export default {
                             this.nominaciones.oro = 0 ;
                             this.nominaciones.plata = 0 ;
                             this.nominaciones.bronce = 0;
+                            this.nominaciones.file = null;
                         } else if (result.isDenied) {
                             this.closeModal();
                         }
@@ -1882,11 +1895,9 @@ export default {
                 this.buscarDocumento(this.form.documento);
             });
 
-
-
             return true;
         },
-        validateRegistro:function() {
+        validateRegistro: function() {
             console.log('Validando validateRegistro');
             Swal.fire({
                 title: "Registro completado",
@@ -1922,93 +1933,13 @@ export default {
     created: function () {
         this.getModalidades();
         this.getGeneros();
-        this.getGruposetnicos();
-        this.getTiposarchivos();
-
     },
     mounted() {
         //console.log(this.militantes);
     },
 }
 
-var scrollpos = window.scrollY;
-var header = document.getElementById("header");
-var navcontent = document.getElementById("nav-content");
-var navaction = document.getElementById("navAction");
-var brandname = document.getElementById("brandname");
-var toToggle = document.querySelectorAll(".toggleColour");
 
-document.addEventListener("scroll", function () {
-    /*Apply classes for slide in bar*/
-    scrollpos = window.scrollY;
-
-    if (scrollpos > 10) {
-        header.classList.add("bg-white");
-        navaction.classList.remove("bg-white");
-        navaction.classList.add("gradient");
-        navaction.classList.remove("text-gray-800");
-        navaction.classList.add("text-white");
-        //Use to switch toggleColour colours
-        for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-gray-800");
-            toToggle[i].classList.remove("text-white");
-        }
-        header.classList.add("shadow");
-        navcontent.classList.remove("bg-gray-100");
-        navcontent.classList.add("bg-white");
-    } else {
-        header.classList.remove("bg-white");
-        navaction.classList.remove("gradient");
-        navaction.classList.add("bg-white");
-        navaction.classList.remove("text-white");
-        navaction.classList.add("text-gray-800");
-        //Use to switch toggleColour colours
-        for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-white");
-            toToggle[i].classList.remove("text-gray-800");
-        }
-
-        header.classList.remove("shadow");
-        navcontent.classList.remove("bg-white");
-        navcontent.classList.add("bg-gray-100");
-    }
-});
-
-/*Toggle dropdown list*/
-/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-
-var navMenuDiv = document.getElementById("nav-content");
-var navMenu = document.getElementById("nav-toggle");
-
-document.onclick = check;
-function check(e) {
-    var target = (e && e.target) || (event && event.srcElement);
-
-    //Nav Menu
-    if (!checkParent(target, navMenuDiv)) {
-        // click NOT on the menu
-        if (checkParent(target, navMenu)) {
-            // click on the link
-            if (navMenuDiv.classList.contains("hidden")) {
-                navMenuDiv.classList.remove("hidden");
-            } else {
-                navMenuDiv.classList.add("hidden");
-            }
-        } else {
-            // click both outside link and outside menu, hide menu
-            navMenuDiv.classList.add("hidden");
-        }
-    }
-}
-function checkParent(t, elm) {
-    while (t.parentNode) {
-        if (t == elm) {
-            return true;
-        }
-        t = t.parentNode;
-    }
-    return false;
-}
 </script>
 <style>
 
