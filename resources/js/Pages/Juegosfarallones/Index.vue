@@ -5,16 +5,8 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <img class="w-10" src="logo.png" />
-                <span class="text-yellow-500 text-4xl">Premios<br>
+                <span class="text-yellow-500 text-2xl lg:text-3xl">Premios<br>
                     Farallones</span>
-            </div>
-            <div class="block lg:hidden pr-4">
-                <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </button>
             </div>
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-white p-4 pt-8 lg:p-0 z-20" id="nav-content">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
@@ -47,19 +39,19 @@
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!--Left Col-->
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-                <h1 class="my-4 text-5xl font-bold leading-tight">
-                    Lorem ipsum dolor sit amet
+                <h1 class="my-4 text-4xl lg:text-5xl font-bold leading-tight">
+                    Premios Farallones 2022
                 </h1>
                 <button @click="openModal('registrar')" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Registrarse
                 </button>
                 <p class="leading-normal text-2xl mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"
                 </p>
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-6 text-center">
-                <img class="w-full md:w-4/5 z-50" src="banner_twitter2.png" />
+                <img class="w-full z-50" src="banner_twitter2.png" />
             </div>
         </div>
     </div>
@@ -82,48 +74,55 @@
             </g>
         </svg>
     </div>
+    <section class="bg-white text-gray-800 border-b py-4">
+        <div class="container max-w-5xl mx-auto m-8">
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full p-6">
+                    <p class="text-justify">
+                        Ceremonia en donde se hará el reconocimiento a los deportistas, entrenadores, dirigentes, árbitros y periodistas del mundo deportivo del alto rendimiento y social comunitario, destacando su dedicación y rendimiento en eventos locales, regionales, nacionales e internacionales en el año inmediatamente anterior
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <a name="info"></a>
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-4">
         <div class="container max-w-5xl mx-auto m-8">
             <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Premios Farallones
+                Premios Farallones 2022
             </h2>
             <div class="w-full mb-4">
                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
             <div class="flex flex-wrap">
-                <div class="w-5/6 sm:w-1/2 p-6">
+                <div class="w-full sm:w-1/2 p-6">
                     <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                        Lorem ipsum dolor sit amet
+                        Premios Farallones de Santiago de Cali
                     </h3>
-                    <p class="text-gray-600 mb-8">
-                        Los Premios Farrallones' estableciéndolos como un evento donde se exalta y otorga incentivos a los protagonistas del mundo del deporte.
-                        De esta manera la Alcaldía de Cali, a  través de la Secretaría del Deporte y la Recreación, rendirá un sentido homenaje a deportistas, dirigentes, jueces, árbitros, entrenadores y periodistas deportivos, que se hacen merecedores de este reconocimiento por su trayectoria deportiva, formación a nivel social comunitario y apoyo en la difusión de los grandes logros del deporte en la capital del Valle.
-
+                    <p class="text-gray-600 mb-8 text-justify">
+                        Los Premios Farallones de Santiago de Cali se definen por la Secretaría del Deporte y la Recreación como la ceremonia donde se nomina, exalta y otorga incentivos a destacados deportistas y reconocidas personalidades en el ejercicio de actividades deportivas de alto rendimiento y deporte social comunitario del Municipio de Santiago de Cali.
                         <br />
-                        <br />
-
                     </p>
                 </div>
                 <div class="w-full sm:w-1/2 p-6">
-                    <img class="w-full sm:h-64 mx-auto" src="imagen1.png" />
+                    <img class="w-full sm:h-64 mx-auto" src="images/30122020-DSC_1214.jpg" />
                 </div>
             </div>
             <div class="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div class="w-full sm:w-1/2 p-6 mt-6">
-                    <img class="w-5/6 sm:h-64 mx-auto" src="imagen2.png" />
+                    <img class="w-5/6 sm:h-64 mx-auto" src="images/30122020-DSC_1277.jpg" />
                 </div>
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
                         <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                            Lorem ipsum dolor sit amet
+                            La Misión de Nuestros Premios Farallones
                         </h3>
-                        <p class="text-gray-600 mb-8">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Los interesados podrán postularse en la página www.premiosfarallones2020.com, donde encontrarán los requisitos necesarios para poder hacer oficial su postulación.
-
-                            “Para nosotros es un orgullo poder exaltar la labor de los deportistas, entrenadores, periodistas, dirigentes y d4emás protagonistas del mundo del deporte, porque gracias a su esfuerzo, dedicación, talento y compromiso seguiremos ratificando ante el mundo que somos Cali Ciudad Deportiva”, manifestó Carlos Diago, secretario del Deporte y al Recreación
-                            <br />
+                        <p class="text-gray-600 mb-4 text-justify">
+                            Se establece que la Secretaría del Deporte y la Recreación tiene como misión fomentar el espíritu deportivo y recreativo en el Municipio de Santiago de Cali y otorgó facultades y funciones al Secretario del Deporte y la Recreación para preparar los proyectos de decretos y resoluciones relacionados que deban dictarse en ejercicio de las atribuciones constitucionales y legales que corresponden al Alcalde, así como de definir las políticas para el fomento, estímulo y bienestar de los deportistas del Municipio de Santiago de Cali.
                             <br />
                         </p>
                     </div>
@@ -142,42 +141,27 @@
             </div>
             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="w-full font-bold text-xl text-gray-800 px-6">
-                            Año 2021
-                        </div>
-                        <p class="text-gray-800 text-base px-6 mb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                    <div class="flex flex-wrap no-underline hover:no-underline">
+                        <p class="text-gray-800 text-base px-6 mb-5 text-justify">
+                            En 1971, se disputaron los Juegos Panamericanos en Santiago de Cali, dándole el título a la ciudad como ‘Cali Ciudad Deportiva’, donde se han disputado eventos de gran importancia cómo: el campeonato mundial de natación en 1975, el campeonato masculino mundial de baloncesto 1982, los juegos mundiales 2013. Desde entonces, y debido a estos eventos deportivos se crearon ‘Los Premios Farallones’
                         </p>
-                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <div class="flex flex-wrap no-underline hover:no-underline">
+                        <p class="text-gray-800 text-base px-6 mb-5 text-justify">
+                            Nuestros Premios Farallones se crearon por y para nuestros deportistas, y todos los que están involucrados en el movimiento deportivo de la ciudad, estableciéndose como un evento donde se elogia y otorgan estímulos a todas estas personas que se merecen un reconocimiento por su esfuerzo, disciplina y dedicación en los eventos deportivos locales, regionales, nacionales e internacionales.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="w-full font-bold text-xl text-gray-800 px-6">
-                            Año 2021
-                        </div>
-                        <p class="text-gray-800 text-base px-6 mb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="w-full font-bold text-xl text-gray-800 px-6">
-                            Año 2021
-                        </div>
-                        <p class="text-gray-800 text-base px-6 mb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                        <p class="text-gray-800 text-base px-6 mb-5 text-justify">
+                            Cali ha albergado distintas competencias deportivas de gran importancia, que han posicionado a Cali como una ciudad deportiva, no solamente logrando la distinción nacional sino también destacándose a nivel internacional.
                         </p>
                     </a>
                 </div>
@@ -196,17 +180,25 @@
 
 
             <vueper-slides
-                ref="vueperslides1"
                 :touchable="false"
                 fade
+                class="no-shadow"
                 :autoplay="true"
-                :bullets="false"
+                :bullets="true"
                 :visible-slides="3"
                 slide-multiple
                 :gap="3"
                 :dragging-distance="200"
+                arrows="false"
+                arrowsOutside="false"
+                disableArrowsOnEdges="true"
+                slideContentOutside="false"
+                slideImageInside="true"
                 :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
                 >
+                <template #arrow-right>
+                    <i class="icon icon-arrow-right" />
+                </template>
                 <vueper-slide
                     v-for="(slide, i) in slides"
                     :key="i"
@@ -244,19 +236,19 @@
     <!--Footer-->
     <footer >
         <div class="container mx-auto px-8">
-            <div class="w-full flex flex-col md:flex-row py-6">
-                    <div class="w-1/3">
-                        <a class="flex text-yellow-600 no-underline text-4xl lg:text-4xl" href="#">
-                            <img class="w-20" src="logo.png" />
+            <div class="w-full flex items-center pb-4">
+                    <div class="w-1/2 lg:w-1/3">
+                        <div class="flex text-yellow-600 no-underline text-xl lg:text-3xl">
+                            <img class="w-10 lg:w-16" src="logo.png" />
                             <span>Premios<br>
                             Farallones</span>
-                        </a>
+                        </div>
                     </div>
-                    <div class="w-1/3 mx-auto">
-                        <img class="h-20" src="calideportiva03.png" />
+                    <div class="hidden lg:flex w-1/3">
+                        <img class="h-10 lg:h-20" src="calideportiva03.png" />
                     </div>
-                    <div class="w-1/3 mr-0">
-                        <img class="h-20 align-middle" src="purocorazon.png" />
+                    <div class="w-1/2 lg:w-1/3">
+                        <img class="h-20 lg:h-32 float-right " src="purocorazon.png" />
                     </div>
 
             </div>
@@ -303,8 +295,9 @@
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                 </button>
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                                    <div class="flex">
+                                    <div class="">
                                         <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Datos personales</h4>
+                                        <p class="text-sm text-red-500 px-4">Ingrese toda información solicitada.</p>
                                     </div>
                                 </div>
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
@@ -315,13 +308,13 @@
                                                 <option value="-" >Seleccione</option>
                                                 <option v-for="tipodoc in arrayTiposdocumento" :key="tipodoc.id" :value="tipodoc.id" v-text="tipodoc.nombre_corto"></option>
                                             </select>
-                                            <div v-if="errors.idtipos_documento" class="text-red-500">{{ errors.idtipos_documento }}</div>
+                                            <div v-if="errors.idtipos_documento" class="text-xs text-red-500">{{ errors.idtipos_documento }}</div>
                                         </div>
                                     </div>
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Documento</label>
                                         <div class="mt-1">
-                                            <input @change="buscarDocumento(form.documento)" type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.documento" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <input @change="buscarDocumento(form.documento)" type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.documento" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <div v-if="errors.documento" class="text-xs text-red-500">{{ errors.documento }}</div>
                                         </div>
                                     </div>
@@ -331,14 +324,14 @@
                                         <label class="block text-md font-medium text-gray-700">Nombres</label>
                                         <div class="mt-1">
                                             <input type="text" :disabled="verMode" :class="{'bg-blue-100' : verMode}" v-model="form.nombres" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                            <div v-if="errors.nombres" class="text-red-500">{{ errors.nombres }}</div>
+                                            <div v-if="errors.nombres" class="text-xs text-red-500">{{ errors.nombres }}</div>
                                         </div>
                                     </div>
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Apellidos</label>
                                         <div class="mt-1">
                                             <input type="text" :disabled="verMode" :class="{'bg-blue-100' : verMode}" v-model="form.apellidos" autocomplete="family-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                            <div v-if="errors.apellidos" class="text-red-500">{{ errors.apellidos }}</div>
+                                            <div v-if="errors.apellidos" class="text-xs text-red-500">{{ errors.apellidos }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +343,7 @@
                                                 <option value="-" >Seleccione departamento</option>
                                                 <option v-for="departamento in arrayDepartamentos" :key="departamento.id" :value="departamento.id" v-text="departamento.nombre"></option>
                                             </select>
-                                            <div v-if="errors.iddepartamento" class="text-red-500">{{ errors.iddepartamento }}</div>
+                                            <div v-if="errors.iddepartamento" class="text-xs text-red-500">{{ errors.iddepartamento }}</div>
                                         </div>
                                     </div>
                                     <div>
@@ -360,7 +353,7 @@
                                                 <option value="-" >Seleccione Ciudad</option>
                                                 <option v-for="ciudad in arrayCiudades" :key="ciudad.id" :value="ciudad.id" v-text="ciudad.nombre"></option>
                                             </select>
-                                            <div v-if="errors.idciudad" class="text-red-500">{{ errors.idciudad }}</div>
+                                            <div v-if="errors.idciudad" class="text-xs text-red-500">{{ errors.idciudad }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -369,7 +362,7 @@
                                         <label class="block text-md font-medium text-gray-700">Fecha de nacimiento</label>
                                         <div class="mt-1">
                                             <Datepicker v-model="form.fechanacimiento" textInput :enableTimePicker="false" :disabled="verMode" autoApply placeholder="Fecha nacimiento" class="border border-gray-300 rounded w-full text-gray-700 focus:outline-none focus:shadow-outline"/>
-                                            <div v-if="errors.fechanacimiento" class="text-red-500">{{ errors.fechanacimiento }}</div>
+                                            <div v-if="errors.fechanacimiento" class="text-xs text-red-500">{{ errors.fechanacimiento }}</div>
                                         </div>
                                     </div>
                                     <div>
@@ -379,7 +372,7 @@
                                                 <option value="-" >Seleccione</option>
                                                 <option v-for="dato in arrayGeneros" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                             </select>
-                                            <div v-if="errors.idgenero" class="text-red-500">{{ errors.idgenero }}</div>
+                                            <div v-if="errors.idgenero" class="text-xs text-red-500">{{ errors.idgenero }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -388,7 +381,7 @@
                                         <label class="block text-md font-medium text-gray-700">Número de años viviendo en Cali</label>
                                         <div class="mt-1">
                                             <input type="number" :disabled="verMode" :class="{'bg-blue-100' : verMode}" v-model="form.viviendocali" autocomplete="family-name" class="text-black block w-full text-black border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                            <div v-if="errors.viviendocali" class="text-red-500">{{ errors.viviendocali }}</div>
+                                            <div v-if="errors.viviendocali" class="text-xs text-red-500">{{ errors.viviendocali }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -404,8 +397,9 @@
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                 </button>
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                                    <div class="flex">
+                                    <div class="">
                                         <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Seleccione el año</h4>
+                                        <p class="text-sm text-red-500 px-4">Ingrese toda información solicitada.</p>
                                     </div>
                                 </div>
 
@@ -435,6 +429,7 @@
                                             <option value="0" >Seleccione</option>
                                             <option v-for="dato in arrayModalidades" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                         </select>
+                                        <div v-if="errors.idmodalidad" class="text-xs text-red-500">{{ errors.idmodalidad }}</div>
                                     </div>
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Categoría</label>
@@ -442,6 +437,7 @@
                                             <option value="0" >Seleccione</option>
                                             <option v-for="dato in arrayCategorias" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                         </select>
+                                        <div v-if="errors.idcategoria" class="text-xs text-red-500">{{ errors.idcategoria }}</div>
                                     </div>
                                 </div>
                                 <div v-show="estado == 'selctPeriodo'" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
@@ -449,7 +445,7 @@
                                         <label class="block text-md font-medium text-gray-700">Nombre competición</label>
                                         <div class="mt-1">
                                             <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.nombre" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                            <div v-if="errors.autorequerimiento" class="text-red-500">{{ errors.autorequerimiento }}</div>
+                                            <div v-if="errors.nombrecompeticion" class="text-red-500">{{ errors.nombrecompeticion }}</div>
                                         </div>
                                     </div>
                                     <div>
@@ -459,6 +455,7 @@
                                                 <div>
                                                     <input @change="onFileChange" accept=".pdf" type="file" name="file" id="file" class="border-2 h-9 text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-black-500 sm:text-sm">
                                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">El archivo debe estar en formato PDF.</p>
+                                                    <div v-if="errors.file" class="text-red-500">{{ errors.file }}</div>
                                                 </div>
                                             </form>
                                         </div>
@@ -477,6 +474,7 @@
                                             </svg>
                                             <div class="text-center mx-auto">
                                                 <input type="number" min="0" max="100" v-model="nominaciones.oro" autocomplete="given-name" class="text-bold text-center text-black block w-2/3 border-blue-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-xl">
+                                                <div v-if="errors.oro" class="text-red-500">{{ errors.oro }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -487,6 +485,7 @@
                                             </svg>
                                             <div class="text-center mx-auto">
                                                 <input type="number" min="0" max="100" v-model="nominaciones.plata" autocomplete="given-name" class="text-bold text-center text-black block w-2/3 border-blue-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-xl">
+                                                <div v-if="errors.plata" class="text-red-500">{{ errors.plata }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -497,11 +496,12 @@
                                             </svg>
                                             <div class="text-center mx-auto">
                                                 <input type="number" min="0" max="100" v-model="nominaciones.bronce" autocomplete="given-name" class="text-bold text-center text-black block w-2/3 border-blue-800 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-xl">
+                                                <div v-if="errors.bronce" class="text-red-500">{{ errors.bronce }}</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div v-if="form.nominaciones" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-1 sm:gap-x-4">
+                                <div v-if="form.nominaciones.length > 0" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-1 sm:gap-x-4">
                                     <!-- Tabla de contenido -->
                                     <section>
                                         <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
@@ -582,22 +582,23 @@
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                 </button>
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                                    <div class="flex">
+                                    <div class="">
                                         <h4 class="text-xl font-bold text-gray-900 px-4 pt-2 pb-2">Datos de Contacto</h4>
+                                        <p class="text-sm text-red-500 px-4">Ingrese toda información solicitada.</p>
                                     </div>
                                 </div>
                                 <div class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Celular</label>
                                         <div class="mt-1">
-                                            <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.celular" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <input type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.celular" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <div v-if="errors.celular" class="text-red-500">{{ errors.celular }}</div>
                                         </div>
                                     </div>
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Teléfono</label>
                                         <div class="mt-1">
-                                            <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.telefono" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <input type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.telefono" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <div v-if="errors.telefono" class="text-red-500">{{ errors.telefono }}</div>
                                         </div>
                                     </div>
@@ -606,7 +607,7 @@
                                     <div>
                                         <label class="block text-md font-medium text-gray-700">Corre electrónico</label>
                                         <div class="mt-1">
-                                            <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.correo" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <input type="email" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.correo" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <div v-if="errors.correo" class="text-red-500">{{ errors.correo }}</div>
                                         </div>
                                     </div>
@@ -671,7 +672,7 @@
                                         <div>
                                             <label class="block text-md font-medium text-gray-700">Documento</label>
                                             <div class="mt-1">
-                                                <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.adocumento" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.adocumento" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                                 <div v-if="errors.adocumento" class="text-red-500">{{ errors.adocumento }}</div>
                                             </div>
                                         </div>
@@ -680,14 +681,14 @@
                                         <div>
                                             <label class="block text-md font-medium text-gray-700">Celular</label>
                                             <div class="mt-1">
-                                                <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.acelular" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.acelular" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                                 <div v-if="errors.acelular" class="text-red-500">{{ errors.acelular }}</div>
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-md font-medium text-gray-700">Teléfono</label>
                                             <div class="mt-1">
-                                                <input type="text" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.atelefono" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                <input type="number" min="1" max="20" :verMode="editMode" :class="{'bg-blue-100' : verMode}" v-model="form.atelefono" autocomplete="postal-code" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                                 <div v-if="errors.atelefono" class="text-red-500">{{ errors.atelefono }}</div>
                                             </div>
                                         </div>
@@ -708,7 +709,7 @@
     <!-- Main modal -->
     <section> <!-- Ventana modal -->
         <div class="fixed z-10 inset-0 overflow-y-auto ease-out duration-400" v-if="isOpendatos">
-            <div class="items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="items-end justify-center min-h-screen pt-24 px-4 pb-20 text-center sm:block sm:p-0">
 
                 <div class="fixed inset-0 transition-opacity">
                     <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -726,19 +727,15 @@
                     <div class="bg-white px-4 pt-2 pb-4 ">
                         <div class="">
                             <div class="mt-1">
-                                <textarea rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">Enviar mensajes con contenidos institucionales, notificaciones, invitación a eventos, y a la participación de espacios de conexión virtual o presencial, alianzas, convenios e iniciativas relacionadas con la toma de decisiones para el acceso e ingreso a programas de educación superior e información relativa al portafolio de servicios de la Entidad y a los procesos asociados a cada uno de los servicios, a través de correo electrónico, mensajes de texto, redes social o cualquier otro canal oficial de comunicación del ICETEX.
+                                <textarea rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">The standard Lorem Ipsum passage, used since the 1500s
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-Atención y respuesta de Peticiones, quejas, reclamos, sugerencias y denuncias (PQRSD).
+Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
 
-Adelantar actividades de prevención relacionadas con el estado de salud y la Emergencia sanitaria, acorde con los lineamientos del Gobierno Nacional en la materia.
-
-Colaborar en los programas de Comunidad ICETEX, que no tienen un vínculo activo con ICETEX.
-
-Desarrollar campañas, actividades de divulgación, capacitaciones y programas de capacitación o formación en habilidades duras, blandas, en acciones de Bienestar o Salud Mental, con el fin de potenciar su perfil profesional y personal.
-
-Realizar transferencia de datos personales a cualquier otra entidad con quienes ICETEX suscriba alianzas, convenios y/o contratos que tengan por objeto de fortalecer la gestión administrativa y ampliar la oferta de productos y servicios.
-
-Grabación de imágenes, voz o cualquier otro registro que sirva de soporte, evidencia, almacenamiento, publicación y distribución de memorias de los eventos, audiencias realizadas y atención de PQRSD.</textarea>
+1914 translation by H. Rackham
+"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -767,11 +764,11 @@ Grabación de imágenes, voz o cualquier otro registro que sirva de soporte, evi
 import Swal from "sweetalert2";
 import { Icon } from '@iconify/vue';
 import Toggle from '@vueform/toggle';
-import '@vueform/toggle/themes/default.css';
+//import '@vueform/toggle/themes/default.css';
 import Button from "../../Jetstream/Button";
 import moment from 'moment'
 import { QuillEditor } from '@vueup/vue-quill';
-import '@vueup/vue-quill/dist/vue-quill.snow.css';
+//import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import { ref, onMounted } from 'vue';
 import { Money3Component } from 'v-money3'
 import {Head, Link, usePage} from '@inertiajs/inertia-vue3';
@@ -783,7 +780,7 @@ import 'vue3-form-wizard/dist/style.css';
 import ThemifyIcon from "vue-themify-icons";
 
 import { VueperSlides, VueperSlide } from 'vueperslides';
-import 'vueperslides/dist/vueperslides.css';
+//import 'vueperslides/dist/vueperslides.css';
 
 export default {
 
@@ -882,14 +879,7 @@ export default {
             activetab: '1',
             tituloModal: '',
             tituloModalDetalle: '',
-            examenuser: null,
-            examen: null,
-            formpasswd: {
-                _token: this._token,
-                id: '',
-                password: '',
-                password_confirmation: '',
-            },
+
             nominaciones: {
                 idnominado: 0,
                 nombre: '',
@@ -914,7 +904,7 @@ export default {
                 idpais	: 1,
                 iddepartamento	: 0,
                 idciudad	: 0,
-                celular	: null,
+                celular	: '',
                 fechanacimiento	: null,
                 idgenero	: 1,
                 iddepartamenton	: null,
@@ -924,11 +914,11 @@ export default {
                 direccion	: '',
                 barrio	: '',
                 comuna	: 0,
-                anombre	: null,
-                aparentesco	: null,
-                adocumento	: null,
-                acelular	: null,
-                atelefono	: null,
+                anombre	: '',
+                aparentesco	: '',
+                adocumento	: '',
+                acelular	: '',
+                atelefono	: '',
                 aidtipos_documento: 1,
                 foto	: null,
                 certificado	: null,
@@ -1072,119 +1062,9 @@ export default {
                 this.arrayArchivos = res.data.archivos;
             })
         },
-        verHistorial: function (data) {
-            this.verHistorialobs = data;
-            this.isOpenverHistorial = true;
-        },
-        updateEstado: function (data) {
-            if (data.tipo == 'renunciar') {
-                let mensaje = 'Desea renunciar a la militancia?';
-                let title = 'Renunciado!';
-                let html = 'La renuncia se ha realizado con éxito';
 
-                Swal.fire({
-                    title: mensaje,
-                    text: "La acción no se podrá reversar!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Si, Proceder!'
-                }).then((result) => {
-                    var url= '/militantes/updateEstado/' + data.idmilitante;
-                    axios.get(url, {
-                        params: {
-                            idmilitante: data.idmilitante,
-                            tipo: data.tipo,
-                            estado: data.estado,
-                            observaciones: data.observaciones,
-                        }
-                    }).then((res) => {
-                        this.getmilitantes('','nombre');
-                        Swal.fire(
-                            title,
-                            html,
-                            'success'
-                        )
-                        this.closeModalCambioestado();
-                        this.closeModal();
-                    })
-                })
-            } else {
-                var url= '/militantes/updateEstado/' + data.idmilitante;
-                axios.get(url, {
-                    params: {
-                        idmilitante: data.idmilitante,
-                        tipo: data.tipo,
-                        estado: data.estado,
-                        observaciones: data.observaciones,
-                    }
-                }).then((res) => {
-                    console.log(res.data);
-                    if (res.data.estado == true) {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'El proceso se realizó correctamente',
-                            showConfirmButton: false,
-                            timer: 2500
-                        })
-                        this.closeModalCambioestado();
-                        this.closeModal();
-                    } else {
-                        var mensajes = '';
-                        for (let i = 0; i < res.data.mensajeserror.length; i++) {
-                            mensajes = mensajes + '\n' + res.data.mensajeserror[i];
-                        }
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error en la aprobación: ' + mensajes,
-                            showConfirmButton: true,
-                        })
-                    }
-                })
-            }
-        },
-
-        cambiarEstado: function (id, tipo) {
-            for(let i = 0; i < this.arrayArchivos.length; i++) {
-                if (this.arrayArchivos[i].idtipoarchivo == 1) {
-                    this.form.archivoformulario = true;
-                }
-                if (this.arrayArchivos[i].idtipoarchivo == 8) {
-                    this.form.archivocertificado = true;
-                }
-            }
-
-            this.formestado.idmilitante = id;
-            this.formestado.tipo = tipo;
-            this.isOpenCambioestado = true;
-        },
         descargarArchivo: function (data) {
             window.open(data, '_blank');
-        },
-        resetcc: function () {
-            this.formcc.id = null;
-            this.formcc.idmilitante  = null;
-            this.formcc.fecharegistro = null;
-            this.formcc.estado = 0;
-            this.formcc.fechapresentacion = null;
-            this.formcc.ingresosgastos = null;
-            this.formcc.presentacion = null;
-            this.formcc.requerimientos = null;
-            this.formcc.autorequerimiento = null;
-            this.formcc.correccion = null;
-            this.formcc.presentacorreccion = null;
-            this.formcc.renuente = 0;
-            this.formcc.investigado = null;
-            this.formcc.sancionado = 0;
-            this.formcc.recurso = null;
-            this.formcc.resolucionpago = null;
-            this.formcc.fecharesolucion = null;
-            this.formcc.pagado = null;
-            this.formcc.idarchivo  = null;
-            this.formcc.fechapago = null;
-            this.formcc.observaciones = null;
         },
         reset: function () {
             this.tituloModalDetalle = '';
@@ -1199,7 +1079,7 @@ export default {
             this.form.idpais	= 1;
             this.form.iddepartamento	= 0;
             this.form.idciudad	= 0;
-            this.form.celular	= null;
+            this.form.celular	= '';
             this.form.fechanacimiento	= null;
             this.form.idgenero	= 1;
             this.form.iddepartamenton	= null;
@@ -1209,11 +1089,11 @@ export default {
             this.form.direccion	= '';
             this.form.barrio	= '';
             this.form.comuna	= 0;
-            this.form.anombre	= null;
-            this.form.aparentesco	= null;
-            this.form.adocumento	= null;
-            this.form.acelular	= null;
-            this.form.atelefono	= null;
+            this.form.anombre	= '';
+            this.form.aparentesco	= '';
+            this.form.adocumento	= '';
+            this.form.acelular	= '';
+            this.form.atelefono	= '';
             this.form.foto	= null;
             this.form.certificado	= null;
             this.form.nominaciones= [];
@@ -1227,6 +1107,7 @@ export default {
             this.nominaciones.oro = 0;
             this.nominaciones.plata = 0;
             this.nominaciones.bronce = 0;
+            this.nominaciones.file = null;
             this.estado = '';
         },
         save: function (data) {
@@ -1266,79 +1147,6 @@ export default {
             this.archivoform.idmilitante =  data['id'];
             this.openModal('ver', data);
         },
-        update: function (data) {
-            data.fechaingreso = data.fechaingreso?this.dateTimeFull(data.fechaingreso):null;
-            data.fechanacimiento = data.fechanacimiento?this.dateTimeFull(data.fechanacimiento):null;
-            data.fecharenuncia = data.fecharenuncia?this.dateTimeFull(data.fecharenuncia):null;
-            data._method = 'PUT';
-            this.$inertia.post('/militantes/'  + data.id, data, {
-                onSuccess: (page) => {
-                    console.log(page.props.errors);
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'El militante se ha actualizado!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    this.getmilitantes('','updated_at');
-                    this.closeModal();
-                    this.reset();
-                    this.editMode = false;
-                    this.verMode = false;
-                    this.newMode = false;
-                },
-            });
-        },
-        getmilitantes: function (buscar, sortBy, filtros = []) {
-            this.buscar = buscar;
-
-            if (sortBy == this.sortBy){
-                this.sortOrder = !this.sortOrder;
-            }
-            let sortOrderdesc;
-            if (this.sortOrder){
-                sortOrderdesc = 'desc';
-            } else {
-                sortOrderdesc = 'desc';
-            }
-            this.sortBy = sortBy;
-            this.ispage = true;
-
-            var url= '/militantes';
-            axios.get(url, {
-                params: {
-                    filtros: filtros,
-                    buscar: this.buscar,
-                    sortBy: this.sortBy,
-                    sortOrder: sortOrderdesc,
-                    ispage: this.ispage
-                }
-            }).then((res) => {
-                var respuesta = res.data;
-                this.arrayData = respuesta.militantes;
-            })
-        },
-        militantesExport: function (filtros = []) {
-            let fecha = moment(new Date()).format('DDMMYYYY');
-            var url= '/militantes/export';
-            axios.get(url, {
-                params: {
-                    filtros: filtros,
-                },
-                responseType: 'blob',
-            }).then((response) => {
-                console.log(response.data);
-                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-                var fileLink = document.createElement('a');
-
-                fileLink.href = fileURL;
-                fileLink.setAttribute('download', 'militantes_'+ fecha + '.xlsx');
-                document.body.appendChild(fileLink);
-
-                fileLink.click();
-            })
-        },
 
         validarEdad: function(fechanacimiento) {
             var now = moment(new Date()); //todays date
@@ -1356,17 +1164,76 @@ export default {
         },
         validateDatospersonales: function() {
             console.log('Validando validateDatospersonales');
-            if (!this.form.documento || this.form.documento == 0) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Primero debe ingresar todos los datos personales',
-                    showConfirmButton: true,
-                })
+            let statuserror = true;
 
-                this.errors.documento = 'Debe ingresar el documento';
-                return false;
+            if (this.form.idtipos_documento == '-') {
+                this.errors.idtipos_documento = 'Debe ingresar el tipo de documento';
+                statuserror =  false;
+            } else {
+                this.errors.idtipos_documento = null;
+            }
+
+            if (this.form.documento === null || this.form.documento == 0 || this.form.documento == '') {
+                statuserror =  false;
+                this.errors.documento = 'Ingrese el documento de identidad';
             } else {
                 this.errors.documento = null;
+            }
+
+            if (this.form.nombres === '') {
+                statuserror =  false;
+                this.errors.nombres = 'Ingrese el nombre';
+            } else {
+                this.errors.nombres = null;
+            }
+            if (this.form.apellidos === '') {
+                statuserror =  false;
+                this.errors.apellidos = 'Ingrese el apellido';
+            } else {
+                this.errors.apellidos = null;
+            }
+
+            if (this.form.iddepartamento == '-') {
+                statuserror =  false;
+                this.errors.iddepartamento = 'Seleccione un departamento';
+            } else {
+                this.errors.iddepartamento = null;
+            }
+
+            if (this.form.idciudad == '-') {
+                statuserror =  false;
+                this.errors.idciudad = 'Seleccione la ciudad';
+            } else {
+                this.errors.idciudad = null;
+            }
+
+            if (this.form.fechanacimiento === null) {
+                statuserror =  false;
+                this.errors.fechanacimiento = 'Ingrese la fecha de nacimiento';
+            } else {
+                this.errors.fechanacimiento = null;
+            }
+
+            if (this.form.idgenero == '-') {
+                statuserror =  false;
+                this.errors.idgenero = 'Seleccione un género';
+            } else {
+                this.errors.idgenero = null;
+            }
+            if (this.form.viviendocali === '' || this.form.viviendocali <= 0) {
+                statuserror =  false;
+                this.errors.viviendocali = 'Ingrese la cantidad de años viviendo el Cali';
+            } else {
+                this.errors.viviendocali = null;
+            }
+
+            if (!statuserror) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese la información solicitada',
+                    showConfirmButton: true,
+                })
+                return false;
             }
 
             this.validarEdad(this.form.fechanacimiento);
@@ -1374,14 +1241,92 @@ export default {
         },
         validateContacto: function() {
             console.log('Validando validateContacto');
-            if (!this.form.documento || this.form.documento == 0) {
+            let statuserror = true;
+            if (this.form.celular === '' || this.form.celular <= 0) {
+                statuserror =  false;
+                this.errors.celular = 'Ingrese número celular';
+            } else {
+                this.errors.celular = null;
+            }
+
+            if (this.form.telefono === '') {
+                statuserror =  false;
+                this.errors.telefono = 'Ingrese número telefono';
+            } else {
+                this.errors.telefono = null;
+            }
+
+            if (this.form.correo === '') {
+                statuserror =  false;
+                this.errors.correo = 'Ingrese el correo';
+            } else {
+                this.errors.correo = null;
+            }
+
+            if (this.form.direccion === '') {
+                statuserror =  false;
+                this.errors.direccion = 'Ingrese la direccion';
+            } else {
+                this.errors.direccion = null;
+            }
+
+            if (this.form.barrio === '') {
+                statuserror =  false;
+                this.errors.barrio = 'Ingrese el barrio';
+            } else {
+                this.errors.barrio = null;
+            }
+
+            if (this.form.comuna <= 0 || this.form.comuna == '') {
+                statuserror =  false;
+                this.errors.comuna = 'Ingrese la comuna';
+            } else {
+                this.errors.comuna = null;
+            }
+
+            //Acudiente
+            if (this.form.acudiente) {
+                if (this.form.anombre == '' || this.form.anombre === null) {
+                    statuserror =  false;
+                    this.errors.anombre = 'Ingrese número nombre';
+                } else {
+                    this.errors.anombre = null;
+                }
+                if (this.form.aparentesco == '' || this.form.aparentesco === null) {
+                    statuserror =  false;
+                    this.errors.aparentesco = 'Ingrese el parentesco';
+                } else {
+                    this.errors.aparentesco = null;
+                }
+                if (this.form.aidtipos_documento == '0' || this.form.aidtipos_documento == '-') {
+                    statuserror =  false;
+                    this.errors.aidtipos_documento = 'Ingrese el tipo de documento';
+                } else {
+                    this.errors.aidtipos_documento = null;
+                }
+                if (this.form.adocumento == '' || this.form.adocumento <= 0) {
+                    statuserror =  false;
+                    this.errors.adocumento = 'Ingrese número de documento';
+                } else {
+                    this.errors.adocumento = null;
+                }
+                if (this.form.acelular == '' || this.form.acelular <= 0) {
+                    statuserror =  false;
+                    this.errors.acelular = 'Ingrese número celular';
+                } else {
+                    this.errors.acelular = null;
+                }
+            }
+
+            if (!statuserror) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Primero debe ingresar todos los datos personales',
+                    title: 'Ingrese la información solicitada',
                     showConfirmButton: true,
                 })
                 return false;
             }
+
             if (!this.form.id) {
                 console.log('nuevo');
 
@@ -1465,10 +1410,59 @@ export default {
         },
         validateCheckout:function() {
             console.log('Validando checkout');
-            if (!this.nominaciones.idcategoria || this.nominaciones.nombre == '' || !this.nominaciones.file) {
+            let statuserror = true;
+
+            if (this.nominaciones.idmodalidad == 0) {
+                statuserror =  false;
+                this.errors.idmodalidad = 'Seleccione la modalidad';
+            } else {
+                this.errors.idmodalidad = null;
+            }
+
+            if (this.nominaciones.idcategoria == 0) {
+                statuserror =  false;
+                this.errors.idcategoria = 'Seleccione la categoria';
+            } else {
+                this.errors.idcategoria = null;
+            }
+
+            if (this.nominaciones.nombre == '') {
+                statuserror =  false;
+                this.errors.nombrecompeticion = 'Ingrese el nombre de la competencia o evento';
+            } else {
+                this.errors.nombrecompeticion = null;
+            }
+
+            if (!this.nominaciones.file) {
+                statuserror =  false;
+                this.errors.file = 'Seleccione un archivo PDF';
+            } else {
+                this.errors.file = null;
+            }
+
+            if (this.nominaciones.oro < 0) {
+                statuserror =  false;
+                this.errors.oro = 'Ingrese la cantidad';
+            } else {
+                this.errors.oro = null;
+            }
+            if (this.nominaciones.plata < 0) {
+                statuserror =  false;
+                this.errors.plata = 'Ingrese la cantidad';
+            } else {
+                this.errors.plata = null;
+            }
+            if (this.nominaciones.bronce < 0) {
+                statuserror =  false;
+                this.errors.bronce = 'Ingrese la cantidad';
+            } else {
+                this.errors.bronce = null;
+            }
+
+            if (!statuserror) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Ingrese los datos de la nominación',
+                    title: 'Ingrese la información solicitada',
                     showConfirmButton: true,
                 })
                 return false;
@@ -1575,6 +1569,7 @@ export default {
                     this.nominaciones.idmodalidad = 0 ;
                     this.nominaciones.idcategoria = 0 ;
                     this.nominaciones.certificado = null ;
+                    this.nominaciones.file = null ;
                     this.nominaciones.oro = 0 ;
                     this.nominaciones.plata = 0 ;
                     this.nominaciones.bronce = 0;
@@ -1599,27 +1594,17 @@ export default {
     },
 }
 
-
 </script>
 <style>
 
-.thumbnails {
-    margin: auto;
-    max-width: 300px;
-}
-
-.thumbnails .vueperslide {
-    box-sizing: border-box;
-    border: 1px solid #fff;
-    transition: 0.3s ease-in-out;
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.thumbnails .vueperslide--active {
+.vueperslide--active {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
     opacity: 1;
     border-color: #000;
 }
 
+.vueperslides__arrow--next{
+    right:0;
+    left:-3.5em
+}
 </style>

@@ -74,12 +74,10 @@ class NominadoController extends Controller
             $sortOrder = 'desc';
         }
 
-        $nominados = Nominados::orderBy($sortBy, $sortOrder)
-                                ->with('nominaciones')
-                                ->with('tipodocumento')
-                                ->with('genero')
-                                ->with('departamento')
-                                ->with('ciudad');
+        $nominados = Nominacion::orderBy($sortBy, $sortOrder)
+                                ->with('nominado')
+                                ->with('modalidad')
+                                ->with('categoria');
 
         $nominados = $nominados->paginate(self::canPorPagina);
 

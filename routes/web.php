@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\BoletasExport;
-use App\Exports\MilitantesExport;
+use App\Exports\NominacionesExport;
 use App\Imports\MilitantesImport;
 use App\Imports\NumeroreservadoImport;
 use App\Models\Militante;
@@ -47,9 +47,9 @@ use Maatwebsite\Excel\Facades\Excel;
         Route::get('/clientes/export', [UserController::class, 'ClientesExport'])->name('clientes.export');
 
 
-        Route::get('/militantes/export', function (Request $request) {
-            return Excel::download(new MilitantesExport($request), 'militantes.xlsx');
-        })->name('militantes.export');
+        Route::get('/nominaciones/export', function (Request $request) {
+            return Excel::download(new NominacionesExport($request), 'nominaciones.xlsx');
+        })->name('nominaciones.export');
 
 
         Route::post('/militantes/import', [MilitanteController::class, 'importar'])->name('militantes.import');
