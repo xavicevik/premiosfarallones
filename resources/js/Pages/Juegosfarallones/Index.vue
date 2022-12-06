@@ -20,7 +20,7 @@
                         <a class="inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#historia">Historia</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#galeria">Gallería</a>
+                        <a class="inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#galeria">Galería</a>
                     </li>
                 </ul>
                 <button
@@ -46,7 +46,8 @@
                     Registrarse
                 </button>
                 <p class="leading-normal text-2xl mb-8">
-                    Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"
+                    Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"<br>
+                    <a class="pl-2 text-sm text-blue-400 underline" href="FinalProyectoDecretoPremiosFarallones22.docx" target="_blank">Consulta aquí el decreto correspondiente.</a>
                 </p>
             </div>
             <!--Right Col-->

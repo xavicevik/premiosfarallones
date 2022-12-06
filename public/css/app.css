@@ -1315,9 +1315,6 @@ select {
 .-mt-12 {
   margin-top: -3rem;
 }
-.mr-0 {
-  margin-right: 0px;
-}
 .block {
   display: block;
 }
@@ -1347,12 +1344,6 @@ select {
 }
 .hidden {
   display: none;
-}
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-.aspect-auto {
-  aspect-ratio: auto;
 }
 .h-5 {
   height: 1.25rem;
@@ -1660,12 +1651,6 @@ select {
 }
 .flex-wrap {
   flex-wrap: wrap;
-}
-.content-center {
-  align-content: center;
-}
-.content-start {
-  align-content: flex-start;
 }
 .items-start {
   align-items: flex-start;
@@ -2140,10 +2125,6 @@ select {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.object-right-bottom {
-  -o-object-position: right bottom;
-     object-position: right bottom;
-}
 .p-2 {
   padding: 0.5rem;
 }
@@ -2600,6 +2581,10 @@ select {
 .text-blue-200 {
   --tw-text-opacity: 1;
   color: rgb(191 219 254 / var(--tw-text-opacity));
+}
+.text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -3658,10 +3643,6 @@ select {
 }
 @media (min-width: 1024px) {
 
-  .lg\:visible {
-    visibility: visible;
-  }
-
   .lg\:col-span-4 {
     grid-column: span 4 / span 4;
   }
@@ -3712,10 +3693,6 @@ select {
     height: 5rem;
   }
 
-  .lg\:h-40 {
-    height: 10rem;
-  }
-
   .lg\:h-32 {
     height: 8rem;
   }
@@ -3744,32 +3721,20 @@ select {
     width: auto;
   }
 
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:w-16 {
+    width: 4rem;
+  }
+
   .lg\:w-4\/12 {
     width: 33.333333%;
   }
 
   .lg\:w-10\/12 {
     width: 83.333333%;
-  }
-
-  .lg\:w-20 {
-    width: 5rem;
-  }
-
-  .lg\:w-40 {
-    width: 10rem;
-  }
-
-  .lg\:w-1\/3 {
-    width: 33.333333%;
-  }
-
-  .lg\:w-10 {
-    width: 2.5rem;
-  }
-
-  .lg\:w-16 {
-    width: 4rem;
   }
 
   .lg\:max-w-none {
@@ -3833,19 +3798,9 @@ select {
     padding-right: 1rem;
   }
 
-  .lg\:py-6 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {
