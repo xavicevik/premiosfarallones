@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Http;
 
 class NominadoController extends Controller
 {
-    const canPorPagina = 5;
+    const canPorPagina = 15;
     const nuCreacion = 1;
     const nuModificacion = 2;
     const nuSancion = 3;
