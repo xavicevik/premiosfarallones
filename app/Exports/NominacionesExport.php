@@ -28,7 +28,7 @@ class NominacionesExport implements FromCollection, WithHeadings, ShouldAutoSize
     {
         $filtros = json_decode($this->request['filtros']);
 
-        $nominaciones = Nominacion::join('nominados', 'nominaciones.idnominado', '=', 'nominados.id')
+        $nominados = Nominacion::join('nominados', 'nominaciones.idnominado', '=', 'nominados.id')
             ->leftJoin('categorias', 'nominaciones.idcategoria', '=', 'categorias.id')
             ->leftJoin('modalidades', 'nominaciones.idmodalidad', '=', 'modalidades.id')
             ->leftJoin('departamentos', 'nominados.iddepartamento', '=', 'departamentos.id')
@@ -36,60 +36,30 @@ class NominacionesExport implements FromCollection, WithHeadings, ShouldAutoSize
             ->leftJoin('generos', 'nominados.idgenero', '=', 'generos.id')
             ->leftJoin('tipos_documentos', 'nominados.idtipos_documento', '=', 'tipos_documentos.id');
 
-        /*
         if (!is_null($filtros)) {
-            if(!is_null($filtros->fechainicio) && $filtros->fechainicio <> '' && $filtros->fechainicio <> null) {
-                 $nominaciones =  $nominaciones->where('nominaciones.updated_at', '>=', $filtros->fechainicio);
+            if (!is_null($filtros->idmodalidad) && $filtros->idmodalidad <> '-') {
+                $nominados = $nominados->where('idmodalidad', $filtros->idmodalidad);
             }
-            if(!is_null($filtros->fechafin) && $filtros->fechafin <> '' && $filtros->fechafin <> null) {
-                 $nominaciones =  $nominaciones->where('nominaciones.updated_at', '<=', $filtros->fechafin);
+            if (!is_null($filtros->idcategoria) && $filtros->idcategoria <> '-') {
+                $nominados = $nominados->where('idcategoria', $filtros->idcategoria);
             }
+            if (!is_null($filtros->anio) && $filtros->anio <> '') {
+                $nominados = $nominados->where('anio', $filtros->anio);
+            }
+
             if (!is_null($filtros->documento) && $filtros->documento <> '') {
-                 $nominaciones =  $nominaciones->where('nominaciones.documento', 'like', '%' . $filtros->documento . '%');
+                $nominados = $nominados->where('nominados.documento', 'like', '%'.$filtros->documento.'%');
             }
+
             if (!is_null($filtros->nombre) && $filtros->nombre <> '') {
-                 $nominaciones =  $nominaciones->where('nominaciones.nombres', 'like', '%' . $filtros->nombre . '%')
-                    ->orWhere('nominaciones.apellidos', 'like', '%' . $filtros->nombre . '%');
+                $nominados = $nominados->where('nominados.nombres', 'like', '%'.$filtros->nombre.'%');
             }
-            if (!is_null($filtros->email) && $filtros->email <> '') {
-                 $nominaciones =  $nominaciones->where('nominaciones.correo', 'like', '%' . $filtros->email . '%');
-            }
-            if (!is_null($filtros->movil) && $filtros->movil <> '') {
-                 $nominaciones =  $nominaciones->where('nominaciones.celular', 'like', '%' . $filtros->movil . '%');
-            }
-            if (!is_null($filtros->idinscripcion) && $filtros->idcategoria <> '-' && $filtros->idcategoria <> 0) {
-                 $nominaciones =  $nominaciones->where('nominaciones.idcategoria', $filtros->idcategoria);
-            }
-            if (!is_null($filtros->idgenero) && $filtros->idgenero <> '-' && $filtros->idgenero <> 0) {
-                 $nominaciones =  $nominaciones->where('nominado.idgenero', $filtros->idgenero);
-            }
-            if (!is_null($filtros->idgrupoetnico) && $filtros->idgrupoetnico <> '-' && $filtros->idgrupoetnico <> 0) {
-                 $nominaciones =  $nominaciones->where('militantes.idgrupoetnico', $filtros->idgrupoetnico);
-            }
-            if (!is_null($filtros->idcorporacion) && $filtros->idcorporacion <> '-' && $filtros->idcorporacion <> 0 && $filtros->idcorporacion <> null) {
-                 $nominaciones =  $nominaciones->where('militantes.idcorporacion', $filtros->idcorporacion);
-            }
-            if (!is_null($filtros->lider) && $filtros->lider <> '' && $filtros->lider <> '-') {
-                 $nominaciones =  $nominaciones->where('militantes.lider', $filtros->lider);
-            }
-            if (!is_null($filtros->avalado) && $filtros->avalado <> '' && $filtros->avalado <> '-') {
-                 $nominaciones =  $nominaciones->where('militantes.avalado', $filtros->avalado);
-            }
-            if (!is_null($filtros->electo) && $filtros->electo <> '' && $filtros->electo <> '-') {
-                 $nominaciones =  $nominaciones->where('militantes.electo', $filtros->electo);
-            }
-            if (!is_null($filtros->estado) && $filtros->estado <> '' && $filtros->estado <> '-') {
-                 $nominaciones =  $nominaciones->where('militantes.estado', $filtros->estado);
-            }
-            if (!is_null($filtros->aportes) && $filtros->aportes <> '' && $filtros->aportes <> '-') {
-                if ($filtros->aportes == 1) {
-                     $nominaciones =  $nominaciones->where('militantes.aportes', '>', $filtros->aportes);
-                }
+            if (!is_null($filtros->idgenero) && $filtros->idgenero <> '-') {
+                $nominados = $nominados->where('nominados.idgenero', $filtros->idgenero);
             }
         }
-        */
 
-        return  $nominaciones->select(
+        return  $nominados->select(
             'tipos_documentos.nombre as Tipo_documento',
             'nominados.documento as Documento',
             'nominados.nombres as Nombres',

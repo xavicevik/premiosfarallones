@@ -551,6 +551,13 @@ class MasterController extends Controller
         return ['categorias' => $categorias];
     }
 
+    public function categorias2(Request $request)
+    {
+        $categorias =  Categorias::all();
+
+        return ['categorias' => $categorias];
+    }
+
     public function nominado(Request $request)
     {
         $nominado =  Nominados::where('documento', $request->documento)

@@ -30,9 +30,9 @@
                         </div>
                     </section>
                     <!-- Fin Encabezado y titulo Busqueda -->
-                    <section>
+                    <section v-show="true">
                         <div class="px-4">
-                            <form @submit.prevent="getmilitantes('', '', formbusqueda)" @keyup.enter="getmilitantes('', '', formbusqueda)">
+                            <form @submit.prevent="getNominados('', '', formbusqueda)" @keyup.enter="getNominados('', '', formbusqueda)">
                                 <div class="grid sm:grid-cols-3 sm:gap-6">
                                     <div class="relative z-0 w-full mb-6 group">
                                         <input type="text" v-model="formbusqueda.documento" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
@@ -55,24 +55,24 @@
                                 </div>
                                 <div class="grid sm:grid-cols-3 sm:gap-6">
                                     <div class="relative z-0 w-full mb-6 group">
-                                        <input type="text" v-model="formbusqueda.idciudad" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                                        <input type="text" v-model="formbusqueda.celular" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
                                         <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                             Celular
                                         </label>
                                     </div>
                                     <div class="relative z-0 w-full mb-6 group">
-                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idgrupoetnico">
+                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idmodalidad">
                                             <option value="-" >Seleccione</option>
-                                            <option v-for="dato in arrayGruposetnicos" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
+                                            <option v-for="dato in arrayModalidades" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                         </select>
                                         <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                             Modalidad
                                         </label>
                                     </div>
                                     <div class="relative z-0 w-full mb-6 group">
-                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idgrupoetnico">
+                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idcategoria">
                                             <option value="-" >Seleccione</option>
-                                            <option v-for="dato in arrayGruposetnicos" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
+                                            <option v-for="dato in arrayCategorias" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                         </select>
                                         <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                             Categoría
@@ -81,23 +81,26 @@
                                 </div>
                                 <div class="grid sm:grid-cols-3 sm:gap-6">
                                     <div class="relative z-0 w-full mb-6 group">
-                                        <input type="text" v-model="formbusqueda.movil" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                                        <input type="text" v-model="formbusqueda.anio" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
                                         <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                             Año
                                         </label>
                                     </div>
                                     <div class="relative z-0 w-full mb-6 group">
-                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idgrupoetnico">
+                                        <select class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" v-model="formbusqueda.idgenero">
                                             <option value="-" >Seleccione</option>
-                                            <option v-for="dato in arrayGruposetnicos" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
+                                            <option v-for="dato in arrayGeneros" :key="dato.id" :value="dato.id" v-text="dato.nombre"></option>
                                         </select>
                                         <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                                            Grupo Étnico
+                                            Género
                                         </label>
                                     </div>
                                 </div>
                                 <div class="flex mx-auto">
-                                    <button type="button" @click="getmilitantes('', '', formbusqueda)" class="mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
+                                    <div class="text-gray-800">
+                                        Cantidad de registros Totales: <span class="text-bold">{{ total }}</span>
+                                    </div>
+                                    <button type="button" @click="getNominados('', '', formbusqueda)" class="mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
                                     <Popper content="Exportar" hover=true placement="top" arrow=true>
                                         <a  href="#" @click="nominacionesExport(formbusqueda)">
                                             <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" class="h-8 w-8"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"/><path fill="#FFF" d="M32 15H39V18H32zM32 25H39V28H32zM32 30H39V33H32zM32 20H39V23H32zM25 15H30V18H25zM25 25H30V28H25zM25 30H30V33H25zM25 20H30V23H25z"/><path fill="#2E7D32" d="M27 42L6 38 6 10 27 6z"/><path fill="#FFF" d="M19.129,31l-2.411-4.561c-0.092-0.171-0.186-0.483-0.284-0.938h-0.037c-0.046,0.215-0.154,0.541-0.324,0.979L13.652,31H9.895l4.462-7.001L10.274,17h3.837l2.001,4.196c0.156,0.331,0.296,0.725,0.42,1.179h0.04c0.078-0.271,0.224-0.68,0.439-1.22L19.237,17h3.515l-4.199,6.939l4.316,7.059h-3.74V31z"/></svg>
@@ -295,7 +298,7 @@
                                             <button  v-else
                                                      class="mr-1 mb-1 px-4 py-3 text-sm leading-4 border rounded hover:bg-white focus:border-indigo-500 focus:text-indigo-500"
                                                      :class="{ 'bg-blue-700 text-white': link.active }"
-                                                     v-on:click="this.cambiarPage(link.url, 'militantes', formbusqueda)"
+                                                     v-on:click="this.cambiarPage(link.url, 'nominados', formbusqueda)"
                                                      v-html="link.label" />
                                         </template>
                                     </div>
@@ -1827,10 +1830,13 @@ export default {
         _token: null
     },
     computed: {
-
+        totalregistros: function() {
+            return this.arrayData.data.length
+        }
     },
     data() {
         return {
+            total: 0,
             current_row: 0,
             total_rows: 0,
             progress: 0,
@@ -1899,44 +1905,14 @@ export default {
                 archivocertificado: false,
             },
             formbusqueda: {
-                id: null,
-                nombre: '',
+                nombre: null,
                 email: null,
-                username: null,
-                apellido: null,
-                idrol: 0,
-                idtipos_documento: 0,
                 documento: null,
-                direccion: null,
-                iddepartamento: 0,
-                idciudad: null,
-                idpais: 1,
-                observaciones: null,
-                movil: null,
-                url: false,
-                cambiarpassword: true,
-                idgenero: '-',
-                idinscripcion: '-',
-                idniveleducativo: '-',
-                idgrupoetnico: '-',
-                discapacitado: '-',
-                victimaconflicto: '-',
-                lider: '-',
-                avalado: '-',
-                idcorporacion: '-',
-                periodo: '-',
-                electo: '-',
-                estado: '-',
-                estadocc: '-',
-                votos: 0,
-                aportes: '-',
-                coalicion: '-',
-                nombrecoalicion: null,
-                renuncio: '-',
-                fecharenuncia: null,
-                idremplazo: null,
-                fechainicio: null,
-                fechafin: null
+                celular: null,
+                idmodalidad: null,
+                idcategoria: null,
+                anio: null,
+                idgenero: null
             },
             formcc: {
                 id: null,
@@ -2243,6 +2219,17 @@ export default {
                 this.arrayHistorial = res.data.historial;
             })
         },
+        gettotal: function (data) {
+            var url= '/nominados/gettotal';
+            axios.get(url, {
+                params: {
+                    idmilitante: 1
+                }
+            }).then((res) => {
+                console.log(res);
+                this.total = res.data.total;
+            })
+        },
         getCuentasClaras: function (data) {
             var url= '/militantes/getCuentasClaras';
             axios.get(url, {
@@ -2529,7 +2516,7 @@ export default {
                 },
             });
         },
-        getmilitantes: function (buscar, sortBy, filtros = []) {
+        getNominados: function (buscar, sortBy, filtros = []) {
             this.buscar = buscar;
 
             if (sortBy == this.sortBy){
@@ -2544,7 +2531,7 @@ export default {
             this.sortBy = sortBy;
             this.ispage = true;
 
-            var url= '/militantes';
+            var url= '/nominados';
             axios.get(url, {
                 params: {
                     filtros: filtros,
@@ -2555,7 +2542,7 @@ export default {
                 }
             }).then((res) => {
                 var respuesta = res.data;
-                this.arrayData = respuesta.militantes;
+                this.arrayData = respuesta.nominados;
             })
         },
         nominacionesExport: function (filtros = []) {
@@ -2618,6 +2605,10 @@ export default {
     },
     created: function () {
         this.arrayData = this.nominados;
+        this.getModalidades();
+        this.getGeneros();
+        this.getCategorias2();
+        this.gettotal();
     },
     mounted() {
     },

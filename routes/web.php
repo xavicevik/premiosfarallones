@@ -68,6 +68,8 @@ use Maatwebsite\Excel\Facades\Excel;
         Route::get('/niveleducativo', [MasterController::class, 'niveleducativo'])->name('niveleducativo');
         Route::get('/gruposetnicos', [MasterController::class, 'gruposetnicos'])->name('gruposetnicos');
         Route::get('/categorias', [MasterController::class, 'categorias'])->name('categorias');
+        Route::get('/categorias2', [MasterController::class, 'categorias2'])->name('categorias2');
+
         Route::get('/tiposarchivos', [MasterController::class, 'tiposarchivos'])->name('tiposarchivos');
         Route::get('/getArchivos', [MilitanteController::class, 'getArchivos'])->name('getArchivos');
         Route::post('/archivo/upload', [MilitanteController::class, 'archivoupload'])->name('fileUpload');
@@ -99,6 +101,9 @@ use Maatwebsite\Excel\Facades\Excel;
         Route::get('/militantes/updateEstado/{militante}', [MilitanteController::class, 'updateEstado'])->name('militantes.updateEstado');
         Route::get('/militantes/ccupdate/{militante}', [MilitanteController::class, 'ccupdate'])->name('militantes.ccupdate');
         Route::get('/militantes/registroHistorial', [MilitanteController::class, 'registroHistorial'])->name('militantes.registroHistorial');
+
+
+        Route::get('/nominados/gettotal', [NominadoController::class, 'gettotal'])->name('gettotal');
 
         Route::resource('nominados', NominadoController::class);
 

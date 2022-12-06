@@ -77,8 +77,8 @@ export default {
                 }
             }).then((res) => {
                 var respuesta = res.data;
-                if (entidad == 'militantes') {
-                    this.arrayData = respuesta.militantes;
+                if (entidad == 'nominados') {
+                    this.arrayData = respuesta.nominados;
                 } else if (entidad == 'clientes') {
                     this.arrayClientes = respuesta.clientes;
                 } else if (entidad == 'auditoria') {
@@ -169,6 +169,12 @@ export default {
                     idmodalidad: idmodalidad,
                 }
             }).then((res) => {
+                this.arrayCategorias = res.data.categorias;
+            })
+        },
+        getCategorias2: function (idmodalidad) {
+            axios.get('/categorias2',
+            ).then((res) => {
                 this.arrayCategorias = res.data.categorias;
             })
         },

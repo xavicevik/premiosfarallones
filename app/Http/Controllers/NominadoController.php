@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Http;
 
 class NominadoController extends Controller
 {
-    const canPorPagina = 15;
+    const canPorPagina = 5;
     const nuCreacion = 1;
     const nuModificacion = 2;
     const nuSancion = 3;
@@ -78,6 +78,37 @@ class NominadoController extends Controller
                                 ->with('nominado')
                                 ->with('modalidad')
                                 ->with('categoria');
+
+        if (!is_null($filtros)) {
+            if (!is_null($filtros->idmodalidad) && $filtros->idmodalidad <> '-') {
+                $nominados = $nominados->where('idmodalidad', $filtros->idmodalidad);
+            }
+            if (!is_null($filtros->idcategoria) && $filtros->idcategoria <> '-') {
+                $nominados = $nominados->where('idcategoria', $filtros->idcategoria);
+            }
+            if (!is_null($filtros->anio) && $filtros->anio <> '') {
+                $nominados = $nominados->where('anio', $filtros->anio);
+            }
+
+            if ((!is_null($filtros->documento) && $filtros->documento <> '') ||
+                (!is_null($filtros->nombre) && $filtros->nombre <> '') ||
+                (!is_null($filtros->idgenero) && $filtros->idgenero <> '-') ){
+
+                $nominados = $nominados->join('nominados', 'nominados.id', '=', 'nominaciones.idnominado')
+                    ->select('nominaciones.*');
+
+                if (!is_null($filtros->documento) && $filtros->documento <> '') {
+                    $nominados = $nominados->where('nominados.documento', 'like', '%'.$filtros->documento.'%');
+                }
+
+                if (!is_null($filtros->nombre) && $filtros->nombre <> '') {
+                    $nominados = $nominados->where('nominados.nombres', 'like', '%'.$filtros->nombre.'%');
+                }
+                if (!is_null($filtros->idgenero) && $filtros->idgenero <> '-') {
+                    $nominados = $nominados->where('nominados.idgenero', $filtros->idgenero);
+                }
+            }
+        }
 
         $nominados = $nominados->paginate(self::canPorPagina);
 
@@ -610,5 +641,12 @@ class NominadoController extends Controller
             'statusfinal' => (string) cache("statusfinal_$id"),
         ]);
     }
+
+    public function gettotal() {
+        $total = Nominacion::all()->count();
+
+        return ['total' => $total];
+    }
+
 
 }
