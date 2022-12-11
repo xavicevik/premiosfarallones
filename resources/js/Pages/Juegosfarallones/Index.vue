@@ -5,8 +5,8 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <img class="w-10" src="logo.png" />
-                <span class="text-yellow-500 text-2xl lg:text-3xl">Premios<br>
-                    Farallones</span>
+                <span class="text-white text-2xl lg:text-3xl">PREMIOS<br>
+                    FARALLONES</span>
             </div>
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-white p-4 pt-8 lg:p-0 z-20" id="nav-content">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
@@ -28,7 +28,7 @@
                     id="navAction"
                     class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
                 >
-                    Nomínate
+                    Nominate
                 </button>
             </div>
         </div>
@@ -43,16 +43,16 @@
                     Premios Farallones 2022
                 </h1>
                 <button @click="openModal('registrar')" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Registrarse
+                    Nominate aquí
                 </button>
                 <p class="leading-normal text-2xl mb-8">
                     Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"<br>
-                    <a class="pl-2 text-sm text-blue-400 underline" href="FinalProyectoDecretoPremiosFarallones22.docx" target="_blank">Consulta aquí el decreto correspondiente.</a>
+                    <a class="pl-2 text-sm text-blue-400 underline" href="Decreto0913_2022_Premios_Farallones.pdf" target="_blank">Consulta aquí el decreto correspondiente.</a>
                 </p>
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-6 text-center">
-                <img class="w-full z-50" src="banner_twitter2.png" />
+                <img class="w-full z-50" src="banner_twitter3.png" />
             </div>
         </div>
     </div>
@@ -239,10 +239,10 @@
         <div class="container mx-auto px-8">
             <div class="w-full flex items-center pb-4">
                     <div class="w-1/2 lg:w-1/3">
-                        <div class="flex text-yellow-600 no-underline text-xl lg:text-3xl">
+                        <div class="flex text-white no-underline text-xl lg:text-3xl">
                             <img class="w-10 lg:w-16" src="logo.png" />
-                            <span>Premios<br>
-                            Farallones</span>
+                            <span class="items-start">PREMIOS<br>
+                            FARALLONES</span>
                         </div>
                     </div>
                     <div class="hidden lg:flex w-1/3">
@@ -282,7 +282,7 @@
                     </section>
                     <!-- Fin Menu Tabs -->
 
-                    <form-wizard next-button-text="Siguiente" subtitle="Formulario de registro" color="#bd8f39"
+                    <form-wizard next-button-text="Siguiente" subtitle="Formulario de registro" color="#1a2d4d"
                                  back-button-text="Volver" step-size="xs" finishButtonText="Terminar"
                                  validateOnBack="false"
                                  @on-change="onChange"
