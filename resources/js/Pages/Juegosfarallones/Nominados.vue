@@ -281,7 +281,7 @@
                                     <td class="border px-1 py-2 text-sm truncate" v-text="user.modalidad.nombre"></td>
                                     <td class="border px-1 py-2 text-sm truncate" v-text="user.categoria.nombre"></td>
                                     <td class="border px-1 py-2 text-sm truncate" v-text="user.nombre"></td>
-                                    <td class="border px-1 py-2 text-sm truncate"><a target="_blank" href="{{ user.certificado }}">Descargar</a> </td>
+                                    <td class="border px-1 py-2 text-sm truncate"><a target="_blank" :href="user.certificado">Descargar</a> </td>
                                 </tr>
                                 <tr v-else>
                                     <td class="border px-4 py-2 text-xs text-center" colspan="7"> La consulta no obtuvo datos</td>
