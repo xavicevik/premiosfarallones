@@ -120,7 +120,7 @@
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
                         <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                            La Misión de Nuestros Premios Farallones
+                            Objetivo de Nuestros Premios Farallones
                         </h3>
                         <p class="text-gray-600 mb-4 text-justify">
                             Se establece que la Secretaría del Deporte y la Recreación tiene como misión fomentar el espíritu deportivo y recreativo en el Municipio de Santiago de Cali y otorgó facultades y funciones al Secretario del Deporte y la Recreación para preparar los proyectos de decretos y resoluciones relacionados que deban dictarse en ejercicio de las atribuciones constitucionales y legales que corresponden al Alcalde, así como de definir las políticas para el fomento, estímulo y bienestar de los deportistas del Municipio de Santiago de Cali.
