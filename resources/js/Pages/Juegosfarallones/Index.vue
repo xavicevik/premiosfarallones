@@ -123,7 +123,7 @@
                             Objetivo de Nuestros Premios Farallones
                         </h3>
                         <p class="text-gray-600 mb-4 text-justify">
-                            Los Premios Farallones del Distrito Especial de Cali” tienen como objetivo exaltar los mejores representantes del Deporte, la Recreación y la Actividad Física y reconocimiento a personalidades destacadas del Sistema Distrital del Deporte, en el Distrito Especial, Deportivo, Turístico, Cultural, Empresarial y de Servicios de Cali.
+                            “Los Premios Farallones del Distrito Especial de Santiago de Cali” tienen como objetivo exaltar los mejores representantes del Deporte de Altos Logros, Deporte para el Desarrollo Social y reconocimiento a personalidades destacadas del Sistema Distrital del Deporte, en el Distrito Especial, Deportivo, Turístico, Cultural, Empresarial y de Servicios de Cali.
                             <br />
                         </p>
                     </div>
