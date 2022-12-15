@@ -18,6 +18,7 @@ class Nominacion extends Model
         'oro',
         'plata',
         'bronce',
+        'entidad'
     ];
 
     public function nominado(){

@@ -450,6 +450,15 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <label class="block text-md font-medium text-gray-700">A que entidad deportiva esta vinculado/medio de comunicación</label>
+                                        <div class="">
+                                            <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.entidad" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                            <div v-if="errors.entidad" class="text-red-500">{{ errors.entidad }}</div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div v-show="estado == 'selctPeriodo'" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                                    <div>
                                         <label :class="{'font-bold' : estado == 4}" class="block mt-2 text-md font-medium text-gray-700">Certificado</label>
                                         <div class="my-auto">
                                             <form name="cc" id="cc" @submit.prevent="submit" enctype="multipart/form-data">
@@ -884,6 +893,7 @@ export default {
                 oro: 0,
                 plata: 0,
                 bronce: 0,
+                entidad:'',
                 file: ''
             },
             form: {
@@ -1488,6 +1498,7 @@ export default {
             formData.append('oro', this.nominaciones.oro);
             formData.append('plata', this.nominaciones.plata);
             formData.append('bronce', this.nominaciones.bronce);
+            formData.append('entidad', this.nominaciones.entidad);
             formData.append('file', this.nominaciones.file);
 
             /*
@@ -1529,6 +1540,7 @@ export default {
                             this.nominaciones.plata = 0 ;
                             this.nominaciones.bronce = 0;
                             this.nominaciones.file = null;
+                            this.entidad = '';
                             this.estado = '';
                             this.form.nominaciones = [];
                             this.buscarDocumento(this.form.documento);
@@ -1567,6 +1579,7 @@ export default {
                     this.nominaciones.oro = 0 ;
                     this.nominaciones.plata = 0 ;
                     this.nominaciones.bronce = 0;
+                    this.entidad = '';
                 } else if (result.isDenied) {
                     this.closeModal();
                 }

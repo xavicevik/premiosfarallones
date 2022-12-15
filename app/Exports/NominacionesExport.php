@@ -87,6 +87,7 @@ class NominacionesExport implements FromCollection, WithHeadings, ShouldAutoSize
             'nominaciones.oro as Oro',
             'nominaciones.plata as Plata',
             'nominaciones.bronce as Bronce',
+            'nominaciones.entidad as Entidad',
             'nominaciones.certificado as Certificado',
             'nominaciones.created_at as fecha_creacion',
             'nominaciones.updated_at as fecha_ultima_modificacion')
@@ -123,6 +124,7 @@ class NominacionesExport implements FromCollection, WithHeadings, ShouldAutoSize
             'Oro',
             'Plata',
             'Bronce',
+            'Entidad',
             'Certificado',
             'Fecha_creacion',
             'Fecha_ultima_actualizacion'
