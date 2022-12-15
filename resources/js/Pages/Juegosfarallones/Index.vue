@@ -123,7 +123,7 @@
                             Objetivo de Nuestros Premios Farallones
                         </h3>
                         <p class="text-gray-600 mb-4 text-justify">
-                            Se establece que la Secretaría del Deporte y la Recreación tiene como misión fomentar el espíritu deportivo y recreativo en el Municipio de Santiago de Cali y otorgó facultades y funciones al Secretario del Deporte y la Recreación para preparar los proyectos de decretos y resoluciones relacionados que deban dictarse en ejercicio de las atribuciones constitucionales y legales que corresponden al Alcalde, así como de definir las políticas para el fomento, estímulo y bienestar de los deportistas del Municipio de Santiago de Cali.
+                            Los Premios Farallones del Distrito Especial de Cali” tienen como objetivo exaltar los mejores representantes del Deporte, la Recreación y la Actividad Física y reconocimiento a personalidades destacadas del Sistema Distrital del Deporte, en el Distrito Especial, Deportivo, Turístico, Cultural, Empresarial y de Servicios de Cali.
                             <br />
                         </p>
                     </div>
