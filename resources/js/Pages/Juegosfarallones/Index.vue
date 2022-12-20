@@ -24,11 +24,11 @@
                     </li>
                 </ul>
                 <button
-                    @click="openModal('registrar')"
                     id="navAction"
+                    disabled
                     class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
                 >
-                    Nominate
+                    Inscripcciones finalizadas
                 </button>
             </div>
         </div>
@@ -42,10 +42,11 @@
                 <h1 class="my-4 text-4xl lg:text-5xl font-bold leading-tight">
                     Premios Farallones 2022
                 </h1>
-                <button @click="openModal('registrar')" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Nominate aquí
+                <button disabled class="mx-auto lg:mx-0 hover:underline bg-gray-300 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    Inscripcciones finalizadas
                 </button>
-                <p class="leading-normal text-2xl mb-8">
+                <p class="text-yellow-500 text-2xl mb-8">El periodo de nominaciones ha terminado.</p><br>
+                <p class="leading-normal text-2xl mb-2">
                     Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"<br>
                     <a class="pl-2 text-sm text-blue-400 underline" href="Decreto0913_2022_Premios_Farallones.pdf" target="_blank">Consulta aquí el decreto correspondiente.</a>
                 </p>
@@ -115,7 +116,7 @@
             </div>
             <div class="flex flex-wrap flex-col-reverse sm:flex-row">
                 <div class="w-full sm:w-1/2 p-6 mt-6">
-                    <img class="w-5/6 sm:h-64 mx-auto" src="images/30122020-DSC_1277.jpg" />
+                    <img class="w-5/6 sm:h-64 mx-auto" src="images/30122020-DSC_1277.jpg" />s
                 </div>
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
@@ -455,7 +456,7 @@
                                             <input type="text" :disabled="verMode" :class="{'border-blue-500 border-4' : estado == 1}" v-model="nominaciones.entidad" autocomplete="given-name" class="text-black block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                             <div v-if="errors.entidad" class="text-red-500">{{ errors.entidad }}</div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                                 <div v-show="estado == 'selctPeriodo'" class="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                                     <div>
