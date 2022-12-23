@@ -23,13 +23,6 @@
                         <a class="inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#galeria">Galería</a>
                     </li>
                 </ul>
-                <button
-                    id="navAction"
-                    disabled
-                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-                >
-                    Inscripciones finalizadas
-                </button>
             </div>
         </div>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -42,14 +35,31 @@
                 <h1 class="my-4 text-4xl lg:text-5xl font-bold leading-tight">
                     Premios Farallones 2022
                 </h1>
-                <button disabled class="mx-auto lg:mx-0 hover:underline bg-gray-300 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Inscripciones finalizadas
-                </button>
-                <p class="text-yellow-500 text-2xl mb-8">El periodo de nominaciones ha terminado.</p><br>
                 <p class="leading-normal text-2xl mb-2">
                     Este 30 de diciembre de 2022 se realizará la ceremonia de los “Premios Farallones 2022"<br>
+		            La comunidad podrá disfrutar de la transmisión mediante las redes sociales de la Secretaría del Deporte y la Recreación en Cali @SecDeporteCali a partir de las 5:00 PM
                     <a class="pl-2 text-sm text-blue-400 underline" href="Decreto0913_2022_Premios_Farallones.pdf" target="_blank">Consulta aquí el decreto correspondiente.</a>
                 </p>
+                <div class="flex">
+                    <a class="px-2" target="_blank" href="https://www.facebook.com/SecDeporteCali">
+                        <button type="button" class="w-8 text-center">
+                            <img class="w-full z-50" src="fb.png" />
+                        </button>
+                    </a>
+                    <a class="px-2" target="_blank" href="https://www.instagram.com/secdeportecali">
+                    	<button type="button" class="w-8 text-center">
+                        	<img class="w-full" src="ig.png" />
+                    	</button>
+                    </a>
+                    <a class="px-2" target="_blank" href="https://twitter.com/secdeportecali">
+                    	<button type="button" class="w-8 text-center">
+                        	<img class="w-full" src="tw.png" />
+                    	</button>
+                    </a>
+                    <span class="text-white text-bold pl-2">
+                        @SecDeporteCali
+                    </span>
+                </div>
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-6 text-center">
